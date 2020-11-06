@@ -1,6 +1,7 @@
-html
-    head
-        title #{summonerName}
-    body
-        h1 #{name}
-        h3 level: #{summonerLevel}
+extends ../layouts/main
+
+block content
+    h1 #{name}
+    h3 level: #{summonerLevel}
+    img(src=`http://ddragon.leagueoflegends.com/cdn/10.22.1/img/profileicon/${profileIconId}.png`
+        style='width: 100px; height: 100px;')

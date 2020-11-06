@@ -12,6 +12,7 @@ exports.user = async (req, res) => {
   res.render('summoner/user', {
     summonerName,
     name,
-    summonerLevel
+    summonerLevel,
+    profileIconId
   });
 };

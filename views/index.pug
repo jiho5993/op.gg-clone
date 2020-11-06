@@ -1,9 +1,10 @@
-html
-    head
-        title title
-        link(rel='stylesheet', href='/css/index.css')
-    body
-        form(action='/summoner/user' method='get')
+extends layouts/main
+
+block content
+    .index-page
+        .logo
+            img(src='/img/1.png')
+        form.summoner-search(action='/summoner/user' method='get')
             p
                 input.search(type='text' name='nickname' placeholder='소환사명, 소환사명, ...')
             p
