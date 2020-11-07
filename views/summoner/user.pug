@@ -1,7 +1,12 @@
 extends ../layouts/main
 
 block content
-    h1 #{name}
-    h3 level: #{summonerLevel}
-    img(src=`http://ddragon.leagueoflegends.com/cdn/10.22.1/img/profileicon/${profileIconId}.png`
-        style='width: 100px; height: 100px;')
+    .summoner-info
+        h1 #{name}
+        h3 level: #{summonerLevel}
+        img(src=`http://ddragon.leagueoflegends.com/cdn/10.22.1/img/profileicon/${profileIconId}.png`
+            style='width: 100px; height: 100px;')
+        p ----------------------
+        ul
+            - for(i=0; i<20; i++)
+                li #{matchList[i].champion}

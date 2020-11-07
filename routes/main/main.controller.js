@@ -1,3 +1,3 @@
 exports.main = (req, res) => {
-  res.render('index', { message: 'Hello there!'});
+  res.render('index');
 };
