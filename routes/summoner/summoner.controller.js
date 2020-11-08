@@ -34,3 +34,25 @@ exports.user = async (req, res) => {
     matchList: matches
   });
 };
+
+exports.matchInfo = async (req, res) => {
+  const id = req.params.matchId;
+  const nickname = req.query.nickname;
+  let pId = null;
+
+  const { data } = await axios.get(`https://kr.api.riotgames.com/lol/match/v4/matches/${id}`, {
+    headers: {
+      "X-Riot-Token": API_KEY
+    }
+  });
+  const { participants, participantIdentities } = data;
+
+  participantIdentities.forEach(element => {
+    const p = element.player;
+    if(p.summonerName === nickname) {
+      pId = element.participantId - 1;
+    }
+  });
+
+  res.json(participants[pId]);
+};

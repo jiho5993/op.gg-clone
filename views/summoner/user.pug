@@ -9,4 +9,5 @@ block content
         p ----------------------
         ul
             - for(i=0; i<20; i++)
-                li #{matchList[i].champion}
+                li
+                    a(href=`/summoner/match-info/${matchList[i].gameId}?nickname=${name}`) #{matchList[i].champion}
