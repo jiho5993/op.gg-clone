@@ -8,6 +8,6 @@ block content
             style='width: 100px; height: 100px;')
         p ----------------------
         ul
-            - for(i=0; i<20; i++)
+            - for(let i=0; i<20; i++)
                 li
-                    a(href=`/summoner/match-info/${matchList[i].gameId}?nickname=${name}`) #{matchList[i].champion}
+                    a(href=`/summoner/match-info/${matchList[i].gameId}?nickname=${name}`) #{matchList[i].champion} - #{matchList[i].win}

@@ -1,4 +1,18 @@
 extends ../layouts/main
 
 block content
-    
+    .match-info
+        if win
+            h1 승리
+        else
+            h1 패배
+        .item-list
+            - for(var i=0; i<7; i++)
+                if itemList[i]
+                    .item
+                        img(src=`http://ddragon.leagueoflegends.com/cdn/10.22.1/img/item/${itemList[i]}.png`)
+                else
+                    .item
+                        .item-null
+        h3 K/D/A: #{kills} / #{deaths} / #{assists}
+        h3 cs: #{creepScore}
